@@ -6,12 +6,6 @@
 
 // FUNCTION 2
 
-const processItems = (items) => {
-  let processedItems = [];
-  for (let item of items) {
-    item.type === "Food" ? processedItems.push(item) : processedItems;
-  }
-  return processedItems;
-};
+const processItems = (items) => items.filter((item) => item.type === "Food");
 
 export default processItems;
