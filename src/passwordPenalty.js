@@ -6,7 +6,6 @@
  * @returns {number}
  */
 
-
 export default function penaltyPoints(password = "") {
   if (password === null || typeof password !== "string") return 0;
 
@@ -19,7 +18,5 @@ export default function penaltyPoints(password = "") {
     if (match.length === 2) count += 1;
     if (match.length > 2) count += 2;
   });
-
   return count;
 }
-
