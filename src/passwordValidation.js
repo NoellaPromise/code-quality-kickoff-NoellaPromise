@@ -6,13 +6,37 @@ export const forbiddenPasswords = ["amG84h6yeQ", "mc9Q20pdjH", "jnT6Q2f8U5"];
  * @param {string} password
  * @returns {boolean}
  */
-
 export default function isValidPassword(password = "") {
+  // The following line ensures, that password is always a string.
   if (typeof password !== "string") password = String(password);
+  if (password.length !== 10) return false;
 
-  const passwordRegex =
-    /^(?=.\d+)(?=.[a-z])(?=.[A-Z])(?=.[a-zA-Z]){4,10}(?!.*0123|.*1234|.*2345|.*3456|.*4567|.*5678|.*6789|.*3210|.*4321|.*5432|.*6543|.*7654|.*8765|.*9876|.*1122|.*2233|.*3344|.*4455|.*5566|.*6677|.*7788|.*8899|.*9900|.*0011|.*1100|$/gm;
+  // Check if the password contains only numbers.
+  if (/^[0-9]+$/.test(password)) return false;
+
+  // Check if the password contains only alphabetic characters (both lowercase and uppercase).
+  if (/^[A-Za-z]+$/.test(password)) return false;
+
+  // Check if the password contains at least one character that is not alphanumeric (i.e., special characters).
+  if (/[^A-Za-z0-9]/.test(password)) return false;
+
+  // Check if the password contains at least one lowercase letter.
+  if (!/[a-z]/.test(password)) return false;
+
+  // Check if the password contains at least one uppercase letter.
+  if (!/[A-Z]/.test(password)) return false;
+
+  // Check if the password is included in a list of forbidden passwords.
+  if (forbiddenPasswords.includes(password)) return false;
+  // Check if the password contains a sequence of three or more digits in ascending or descending order.
+  const arr = [
+    123, 234, 345, 456, 567, 678, 789, 987, 876, 765, 654, 543, 432, 321,
+  ];
+  const res = arr.filter((el) => password.includes(String(el)));
+  if (res.length !== 0) return false;
+
   const setOfPassword = new Set([...password]);
   if (setOfPassword.size < 4) return false;
+
   return true;
 }

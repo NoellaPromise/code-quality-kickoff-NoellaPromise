@@ -5,12 +5,8 @@
  */
 
 // FUNCTION 1
-const numberOfOccurences = (word) => {
-  let count = 0;
-  for (const letter of word) {
-    letter === "R" ? count++ : null;
-  }
-  return count;
-};
 
-export default numberOfOccurences;
+
+const numberOfOccurrences = (word) => word.split('R').length - 1;
+
+export default numberOfOccurrences;
