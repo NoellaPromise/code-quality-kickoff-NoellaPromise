@@ -1,3 +1,4 @@
+// eslint-disable-next-line unicorn/filename-case
 export  const forbiddenPasswords = ["amG84h6yeQ", "mc9Q20pdjH", "jnT6Q2f8U5"];
 
 /**
@@ -32,6 +33,7 @@ export default function isValidPassword(password = "") {
   const array = [
     123, 234, 345, 456, 567, 678, 789, 987, 876, 765, 654, 543, 432, 321,
   ];
+  // eslint-disable-next-line unicorn/prevent-abbreviations
   const res = array.filter((element) => password.includes(String(element)));
   if (res.length > 0) return false;
 
