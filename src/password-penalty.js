@@ -7,16 +7,17 @@
  */
 
 export default function penaltyPoints(password = "") {
+  // const newVariable = ""
   if (password === null || typeof password !== "string") return 0;
 
-  const regex = /([a-z0-9])\1+/gi;
+  const regex = /([\da-z])\1+/gi;
   const matches = password.match(regex) || [];
 
   let count = 0;
 
-  matches.forEach((match) => {
+  for (const match of matches) {
     if (match.length === 2) count += 1;
     if (match.length > 2) count += 2;
-  });
+  }
   return count;
 }
