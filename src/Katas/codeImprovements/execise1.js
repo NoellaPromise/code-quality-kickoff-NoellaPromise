@@ -1,5 +1,5 @@
 function calculateAverage(numbers) {
-  const sum =
-    numbers.reduce((accumulator, number) => accumulator + number, 0) /
+  const average =
+    numbers.reduce((accumulator, number) => accumulator + number) /
     numbers.length;
 }

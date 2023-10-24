@@ -1,6 +1,3 @@
 function calculateMatrixSum(matrix) {
-  return matrix.reduce(
-    (acc, row) => acc + row.reduce((rowSum, element) => rowSum + element, 0),
-    0
-  );
+  return matrix.flat().reduce((accumulator, element) => accumulator + element);
 }
