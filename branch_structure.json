@@ -1,0 +1,33 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "ft/code-improvement",
+    "ft/number-formatter",
+    "main",
+    "question4-exercise2",
+    "question4-exercise3",
+    "question4-exercise4",
+    "question4/exercise1",
+    "question5"
+  ],
+  "parent": {
+    "ft/code-improvement": "main",
+    "ft/number-formatter": "main",
+    "main": null,
+    "question4-exercise2": "main",
+    "question4-exercise3": "main",
+    "question4-exercise4": "main",
+    "question4/exercise1": "main",
+    "question5": "main"
+  },
+  "order": [
+    "main",
+    "ft/code-improvement",
+    "ft/number-formatter",
+    "question4-exercise2",
+    "question4-exercise3",
+    "question4-exercise4",
+    "question4/exercise1",
+    "question5"
+  ]
+}
