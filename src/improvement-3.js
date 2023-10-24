@@ -6,12 +6,7 @@
 
 // FUNCTION 3
 
-const findLargestNumber = (numbers) => {
-  let largest = numbers[0];
-  for (let number of numbers) {
-    number > largest ? (largest = number) : number;
-  }
-  return largest;
-};
+const findLargestNumber = (numbers) => Math.max(...numbers);
 
 export default findLargestNumber;
+

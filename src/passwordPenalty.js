@@ -5,17 +5,18 @@
  * @param {string} password
  * @returns {number}
  */
+
 export default function penaltyPoints(password = "") {
-  if (password === null) return 0;
-  if (typeof password !== "string") password = String(password);
+  if (password === null || typeof password !== "string") return 0;
+
+  const regex = /([a-z0-9])\1+/gi;
+  const matches = password.match(regex) || [];
 
   let count = 0;
-  let Regex = /([a-z0-9])\1+/gi;
-  let arrOfMatching = password.match(Regex) || 0;
-  if (arrOfMatching === 0) return 0;
-  for (let char of arrOfMatching) {
-    if (char.length === 2) count += 1;
-    if (char.length > 2) count += 2;
-  }
+
+  matches.forEach((match) => {
+    if (match.length === 2) count += 1;
+    if (match.length > 2) count += 2;
+  });
   return count;
 }
