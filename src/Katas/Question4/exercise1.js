@@ -10,5 +10,5 @@ function getNestingLevel(array) {
 
 function flattenArray(array) {
   const level = getNestingLevel(array);
-  return level === 0 ? Array : array.flat(level);
+  return level === 0 ? [] : array.flat(level);
 }
