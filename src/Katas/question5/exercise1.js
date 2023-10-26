@@ -1,5 +1,5 @@
 function decimalToBinary(decimal) {
-  if (typeof decimal !== "number" || isNaN(decimal)) {
+  if (typeof decimal !== "number") {
     return "Not a valid number.";
   }
 
