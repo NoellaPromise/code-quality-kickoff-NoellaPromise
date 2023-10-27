@@ -1,11 +1,11 @@
-function fibonacci(n) {
-  if (n <= 0) {
+function getFibonacci(number) {
+  if (number <= 0) {
     return "Please provide a positive integer.";
   }
-  if (n === 1) return [0];
+  if (number === 1) return [0];
 
   const sequence = [0, 1];
-  for (let i = 2; i < n; i++) {
+  for (let i = 2; i < number; i++) {
     sequence.push(sequence[i - 1] + sequence[i - 2]);
   }
 
